@@ -1,9 +1,6 @@
 # All Japan Robot Sumo Tournament 2026 - 500g Class
-
 ## Autonomous (Auto) & Remote-Controlled (RC) Divisions
-
 ## Description
-
 This repository documents the **competition concept, rules, and high-level design philosophy** for participating in the **All Japan Robot Sumo Tournament 2026** in the **500g class**, covering both divisions:
 
 - **Autonomous (Auto):** fully autonomous operation after the official start signal
@@ -15,7 +12,6 @@ Detailed hardware and software implementations will be added in later phases.
 ---
 
 ## Overview
-
 <p align="center">
   <img src="docs/images/about_robot.jpg" alt="Robot Sumo Overview" width="60%">
 </p>
@@ -39,7 +35,6 @@ This project emphasizes:
 ---
 
 ## Repository Scope (Current Phase)
-
 This README intentionally documents:
 
 - Competition overview
@@ -51,7 +46,6 @@ Robot CAD, PCB design, firmware, and tuning details will be documented later und
 ---
 
 ## What the “500g Class” Represents
-
 The 500g class is a constrained, high-performance category where success depends on balancing:
 
 - **Weight budget** — every gram must be justified
@@ -64,15 +58,12 @@ The class rewards **engineering discipline** more than raw power.
 ---
 
 ## Key Rule Differences: Auto vs RC (500g)
-
 ### Autonomous (Auto)
-
 - No operator input during the match
 - Robot behavior is fully determined by onboard logic
 - Uses an official or compatible **start module** controlled by judges
 
 ### Remote-Controlled (RC)
-
 - The robot is driven by a human operator
 - Control must use a legal radio system
 - Match start is based on an audible **countdown timer** (3…2…1… beep)
@@ -80,15 +71,13 @@ The class rewards **engineering discipline** more than raw power.
 ---
 
 ## 500g Class Rules (Practical Summary)
-
-> **Source of Truth**: All rule specifications are defined in [`config/rules_500g.yaml`](config/rules_500g.yaml)  
-> Always verify final details using the official tournament rulebook.  
-> This section translates rules into engineering-relevant constraints.
+> **Source of Truth (Planned):**  
+> Numerical rule constraints are centralized in `config/rules_500g.yaml` to avoid duplication.  
+> Always verify final details using the official tournament rulebook.
 
 ---
 
 ## 1) Robot Size
-
 At inspection / before the match starts, the robot must satisfy:
 
 - **Width ≤ 10 cm**
@@ -96,7 +85,6 @@ At inspection / before the match starts, the robot must satisfy:
 - **Height: not restricted**
 
 ### Inspection Gauge
-
 For the 500g class, organizers use a dedicated inspection gauge:
 
 - Inner dimensions: **105 mm × 105 mm**
@@ -108,7 +96,6 @@ This rule strongly influences start-condition design.
 ---
 
 ## 2) Robot Weight
-
 - Maximum total mass: **500g**
 - Includes all mounted components (battery, electronics, sensors, fasteners, etc.)
 - Any exclusions depend on official definitions and division rules
@@ -122,7 +109,6 @@ Weight compliance must be maintained throughout the event.
 ---
 
 ## 3) Dohyo Specifications
-
 The standard 500g dohyo has the following characteristics:
 
 - **Height:** 2.5 cm
@@ -132,7 +118,6 @@ The standard 500g dohyo has the following characteristics:
 - **Boundary line:** white; the line itself is considered **inside**
 
 ### Dohyo Diagram
-
 <p align="center">
   <img src="docs/images/dohyo_500g.png" alt="500g dohyo diagram" width="60%">
 </p>
@@ -140,7 +125,6 @@ The standard 500g dohyo has the following characteristics:
 ---
 
 ## 4) Match Format and Scoring
-
 A match is typically:
 
 - **3 minutes**
@@ -149,7 +133,6 @@ A match is typically:
 If the match is undecided, judges may determine the result by advantage or extension, depending on tournament rules.
 
 ### Point Conditions (Typical)
-
 A point is awarded when:
 
 - The opponent exits the dohyo beyond the boundary, or
@@ -158,9 +141,7 @@ A point is awarded when:
 ---
 
 ## 5) Start Procedures
-
 ### Autonomous (Auto)
-
 Auto-class robots use a **start module system** to prevent false starts:
 
 - Judges transmit IR signals using an official remote
@@ -204,12 +185,10 @@ flowchart TD
 ---
 
 ## Development Roadmap
-
 ### Current Phase (Concept & Rules)
 - [x] Document competition overview and rules
 - [x] Define design philosophy and constraints
 - [x] Create structured configuration files
-
 ### Next Phases
 - **Hardware Design** (`/hardware` folder)
   - Mechanical CAD and chassis design
@@ -225,6 +204,8 @@ flowchart TD
   - Prototype building and testing
   - Rule compliance verification
   - Performance optimization
+
+---
 
 ### Resources
 - [Official Tournament Rulebook](https://www.fsi.co.jp/sumo/rule/index.html)
