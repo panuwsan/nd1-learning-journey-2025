@@ -4,7 +4,7 @@
 
 ## Description
 
-This repository documents the **competition concept, rules, and high-level design philosophy** for participating in the **All Japan Robot Sumo Tournament 2026** in the **500 g class**, covering both divisions:
+This repository documents the **competition concept, rules, and high-level design philosophy** for participating in the **All Japan Robot Sumo Tournament 2026** in the **500g class**, covering both divisions:
 
 - **Autonomous (Auto):** fully autonomous operation after the official start signal
 - **Remote-Controlled (RC):** operator-controlled robot using a legal wireless controller
@@ -23,7 +23,7 @@ Detailed hardware and software implementations will be added in later phases.
 Robot Sumo is a head-to-head competition on a circular steel ring (_dohyo_).  
 The objective is to push the opponent out of the ring or disable them within the match time.
 
-In the **500 g class**, constraints are especially strict:
+In the **500g class**, constraints are especially strict:
 
 - The total weight budget is extremely limited
 - Size compliance at inspection is critical
@@ -43,16 +43,16 @@ This project emphasizes:
 This README intentionally documents:
 
 - Competition overview
-- Official rule interpretation (500 g class)
+- Official rule interpretation (500g class)
 - High-level design concept and philosophy
 
 Robot CAD, PCB design, firmware, and tuning details will be documented later under `/hardware` and `/software`.
 
 ---
 
-## What the “500 g Class” Represents
+## What the “500g Class” Represents
 
-The 500 g class is a constrained, high-performance category where success depends on balancing:
+The 500g class is a constrained, high-performance category where success depends on balancing:
 
 - **Weight budget** — every gram must be justified
 - **Starting size compliance** — must pass the inspection gauge in the start condition
@@ -63,7 +63,7 @@ The class rewards **engineering discipline** more than raw power.
 
 ---
 
-## Key Rule Differences: Auto vs RC (500 g)
+## Key Rule Differences: Auto vs RC (500g)
 
 ### Autonomous (Auto)
 
@@ -73,13 +73,13 @@ The class rewards **engineering discipline** more than raw power.
 
 ### Remote-Controlled (RC)
 
-- Robot is driven by a human operator
+- The robot is driven by a human operator
 - Control must use a legal radio system
 - Match start is based on an audible **countdown timer** (3…2…1… beep)
 
 ---
 
-## 500 g Class Rules (Practical Summary)
+## 500g Class Rules (Practical Summary)
 
 > **Source of Truth**: All rule specifications are defined in [`config/rules_500g.yaml`](config/rules_500g.yaml)  
 > Always verify final details using the official tournament rulebook.  
@@ -89,7 +89,7 @@ The class rewards **engineering discipline** more than raw power.
 
 ## 1) Robot Size
 
-At inspection / before the match start, the robot must satisfy:
+At inspection / before the match starts, the robot must satisfy:
 
 - **Width ≤ 10 cm**
 - **Depth ≤ 10 cm**
@@ -97,7 +97,7 @@ At inspection / before the match start, the robot must satisfy:
 
 ### Inspection Gauge
 
-For the 500 g class, organizers use a dedicated inspection gauge:
+For the 500g class, organizers use a dedicated inspection gauge:
 
 - Inner dimensions: **105 mm × 105 mm**
 - The robot must touch **two perpendicular sides**
@@ -109,7 +109,7 @@ This rule strongly influences start-condition design.
 
 ## 2) Robot Weight
 
-- Maximum total mass: **500 g**
+- Maximum total mass: **500g**
 - Includes all mounted components (battery, electronics, sensors, fasteners, etc.)
 - Any exclusions depend on official definitions and division rules
 
@@ -123,7 +123,7 @@ Weight compliance must be maintained throughout the event.
 
 ## 3) Dohyo Specifications
 
-The standard 500 g dohyo has the following characteristics:
+The standard 500g dohyo has the following characteristics:
 
 - **Height:** 2.5 cm
 - **Diameter:** 77 cm
@@ -134,7 +134,7 @@ The standard 500 g dohyo has the following characteristics:
 ### Dohyo Diagram
 
 <p align="center">
-  <img src="docs/images/dohyo_500g.png" alt="500 g dohyo diagram" width="60%">
+  <img src="docs/images/dohyo_500g.png" alt="500g dohyo diagram" width="60%">
 </p>
 
 ---
