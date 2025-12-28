@@ -50,44 +50,6 @@ Robot CAD, PCB design, firmware, and tuning details will be documented later und
 
 ---
 
-## Configuration Management
-
-This project uses structured YAML configuration files to maintain rule compliance and design consistency:
-
-### Key Configuration Files
-- [`config/project.yaml`](config/project.yaml) - Project metadata and targets
-- [`config/rules_500g.yaml`](config/rules_500g.yaml) - Tournament rules and constraints
-
-### Using Configuration in Code
-
-Load and validate against rules programmatically:
-
-```python
-import yaml
-
-# Load rules configuration
-with open('config/rules_500g.yaml', 'r') as f:
-    rules = yaml.safe_load(f)
-
-# Example validation
-def validate_robot_size(width_mm, depth_mm, height_mm):
-    max_width = rules['rules_500g']['size_at_inspection_mm']['width']
-    max_depth = rules['rules_500g']['size_at_inspection_mm']['depth']
-    
-    if width_mm > max_width or depth_mm > max_depth:
-        raise ValueError(f"Robot exceeds inspection limits: {max_width}mm x {max_depth}mm")
-    
-    return True
-
-# Example usage
-validate_robot_size(95, 95, 50)  # Valid
-# validate_robot_size(110, 95, 50)  # Raises ValueError
-```
-
-This approach ensures all design decisions reference the single source of truth for tournament rules.
-
----
-
 ## What the “500 g Class” Represents
 
 The 500 g class is a constrained, high-performance category where success depends on balancing:
@@ -129,15 +91,15 @@ The class rewards **engineering discipline** more than raw power.
 
 At inspection / before the match start, the robot must satisfy:
 
-- **Width ≤ 10 cm** (`rules_500g.size_at_inspection_mm.width`)
-- **Depth ≤ 10 cm** (`rules_500g.size_at_inspection_mm.depth`)  
-- **Height: not restricted** (`rules_500g.size_at_inspection_mm.height`)
+- **Width ≤ 10 cm**
+- **Depth ≤ 10 cm**
+- **Height: not restricted**
 
 ### Inspection Gauge
 
 For the 500 g class, organizers use a dedicated inspection gauge:
 
-- Inner dimensions: **105 mm × 105 mm** (`rules_500g.inspection_gauge_inner_mm`)
+- Inner dimensions: **105 mm × 105 mm**
 - The robot must touch **two perpendicular sides**
 - The remaining two sides must have visible clearance
 
@@ -147,7 +109,7 @@ This rule strongly influences start-condition design.
 
 ## 2) Robot Weight
 
-- Maximum total mass: **500 g** (`rules_500g.weight_limit_g`)
+- Maximum total mass: **500 g**
 - Includes all mounted components (battery, electronics, sensors, fasteners, etc.)
 - Any exclusions depend on official definitions and division rules
 
@@ -163,11 +125,11 @@ Weight compliance must be maintained throughout the event.
 
 The standard 500 g dohyo has the following characteristics:
 
-- **Height:** 2.5 cm (`rules_500g.dohyo.height_mm`)
-- **Diameter:** 77 cm (`rules_500g.dohyo.diameter_mm`)
+- **Height:** 2.5 cm
+- **Diameter:** 77 cm
 - **Surface:** black melamine sheet on a wooden base
 - **Starting lines (Shikiri-sen):** brown lines near the center
-- **Boundary line:** white; the line itself is considered **inside** (`rules_500g.dohyo.boundary_line_width_mm`)
+- **Boundary line:** white; the line itself is considered **inside**
 
 ### Dohyo Diagram
 
@@ -176,18 +138,6 @@ The standard 500 g dohyo has the following characteristics:
 </p>
 
 ---
-
-## 6) Forbidden Mechanisms
-
-The following mechanisms are strictly prohibited in the 500 g class (`rules_500g.forbidden`):
-
-- **Suction or downforce systems** that exceed the robot's self-weight (`suction_or_downforce_gt_self_weight: true`)
-- **Sharp edges** that could damage the dohyo or opponent (`sharp_edges: true`)
-- **Liquids, powders, or gases** that could contaminate the dohyo (`liquids_powders_gases: true`)
-- **Projectiles** or any thrown objects (`projectiles: true`)
-- **Radio interference or jamming** systems (`interference_jamming: true`)
-
-All designs must comply with these restrictions to ensure fair and safe competition.
 
 ## 4) Match Format and Scoring
 
