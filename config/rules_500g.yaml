@@ -1,0 +1,26 @@
+rules_500g:
+  size_at_inspection_mm:
+    width: 100
+    depth: 100
+    height: "unrestricted"
+  inspection_gauge_inner_mm:
+    width: 105
+    depth: 105
+
+  weight_limit_g: 500
+
+  dohyo:
+    diameter_mm: 770
+    height_mm: 25
+    boundary_line_width_mm: 25
+    start_lines:
+      offset_from_center_mm: 50
+      width_mm: 10
+      length_mm: 100
+
+  forbidden:
+    suction_or_downforce_gt_self_weight: true
+    sharp_edges: true
+    liquids_powders_gases: true
+    projectiles: true
+    interference_jamming: true

@@ -1,0 +1,7 @@
+project:
+  name: All Japan Robot Sumo Tournament 2026
+  class_targets:
+    - "500g Autonomous"
+    - "500g RC"
+  doc_policy:
+    focus_now: "concept_and_rules_only"
