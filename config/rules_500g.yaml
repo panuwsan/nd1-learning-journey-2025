@@ -17,10 +17,3 @@ rules_500g:
       offset_from_center_mm: 50
       width_mm: 10
       length_mm: 100
-
-  forbidden:
-    suction_or_downforce_gt_self_weight: true
-    sharp_edges: true
-    liquids_powders_gases: true
-    projectiles: true
-    interference_jamming: true
